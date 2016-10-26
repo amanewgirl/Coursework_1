@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def root():
-  return render_template ('home.html')
+  return render_template ('standard.html')
 
 @app.route("/Search-a-doodle/")
 def hello():
