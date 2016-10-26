@@ -3,10 +3,13 @@
 from flask import Flask, redirect, url_for, abort,render_template
 app = Flask(__name__)
 
-@app.route("/")
-def root():
+def design():
   return render_template ('standard.html')
 
+@app.route("/")
+def root():
+  return render_template ('home.html')
+ 
 @app.route("/Search-a-doodle/")
 def hello():
   return "If you want to search for doodles, you've found the right place"
