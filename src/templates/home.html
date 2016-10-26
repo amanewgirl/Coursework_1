@@ -5,7 +5,9 @@
 <title>"Google Doodles"</title>
 <link href="site.css" rel= "stylesheet" />
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/site.css') }}">
-<link rel="icon" type="image/png" href="logo2.png"  />
+<link rel="icon" type="image/png"
+href="{{url_for('static',filename='logos/logo2.png')}}" />
+
 </head>
 
 <body>
@@ -14,7 +16,7 @@
 <div id="header">
 
 <div class="logospace">
-<a href=googledoodle.htm><img id=logo src="logo2.png" height="100" width="500"></a>
+<img id=logo src="{{url_for('static',filename='logos/logo2.png')}}"   height="100" width="500">
 
 
 <ul class="nav">
