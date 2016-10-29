@@ -7,15 +7,25 @@
 
 {% block content %}
  
+ <br> </br>
+ <br> </br>
 
-<p>Hey!
-
+ <script src=""//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js""></script>
+   
 
  {% for image in images%}
+<script>	
+$(window).scroll(function() {
+    if($(window).scrollTop() == $(document).height() - $(window).height()) {
+           // ajax call get data from server and append to the div
+         <td><img src= " {{url_for('static', filename='all_doodles/still_doodles/'+image)}}" width="300" height="200">
+ 	
 
-<img src= " {{url_for('static', filename='all_doodles/still_doodles/'+image)}}">
+    }
+});
 
+</script>
 
-{% endfor %}
+  {% endfor %}
 
 {% endblock %}}
