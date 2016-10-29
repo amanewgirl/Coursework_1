@@ -7,13 +7,13 @@
 {% block content %}
 
 <ul class= "display" >
-{% for image in images: %}
+{% for jpgfile in files: %}
 
 <table style="width:100%">
 
 
  <tr>
-   
+   {{jpgfile}}
     <td> <img src="static/all_doodles/still_doodles/{{image}}" />
     <td> <img src="static/all_doodles/{{image}}" width="120" height="90" />
     <td> <img src="css/logos/{{image}}" width="120" height="90" />
