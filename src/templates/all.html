@@ -7,18 +7,37 @@
 {% block content %}
 
 <ul class= "display" >
-{% for image in images: %}
+
 
 <table style="width:100%">
 
 
- <tr>
+ <tr id= one>
    
-    <td> <img src="static/all_doodles/still_doodles/{{image}}" />
-    <td> <img src="static/all_doodles/{{image}}" width="120" height="90" />
-    <td> <img src="css/logos/{{image}}" width="120" height="90" />
+    <td> <img src="{{url_for('static',filename='all_doodles/still_doodles/1 October - Nigeria Independence Day 2016.jpg')}}" width="300" height="200" />  
+    <td> <img src="{{url_for('static',filename='all_doodles/still_doodles/1 October - Nigeria Independence Day 2016.jpg')}}" width="300" height="200" />  
+    <td> <img src="{{url_for('static',filename='all_doodles/still_doodles/1 October - Nigeria Independence Day 2016.jpg')}}" width="300" height="200" />  
+    
+</tr>
 
- {% endfor %}
+<tr id = two>
+    <td> <img src="{{url_for('static',filename='all_doodles/still_doodles/1 October - Nigeria Independence Day 2016.jpg')}}" width="300" height="200" />  
+    <td> <img src="{{url_for('static',filename='all_doodles/still_doodles/1 October - Nigeria Independence Day 2016.jpg')}}" width="300" height="200" />  
+    <td> <img src="{{url_for('static',filename='all_doodles/still_doodles/1 October - Nigeria Independence Day 2016.jpg')}}" width="300" height="200" />  
+    
+
+</tr>
+
+
+<tr id= three>
+
+    <td> <img src="{{url_for('static',filename='all_doodles/still_doodles/1 October - Nigeria Independence Day 2016.jpg')}}" width="300" height="200" />  
+    <td> <img src="{{url_for('static',filename='all_doodles/still_doodles/1 October - Nigeria Independence Day 2016.jpg')}}" width="300" height="200" />  
+    <td> <img src="{{url_for('static',filename='all_doodles/still_doodles/1 October - Nigeria Independence Day 2016.jpg')}}" width="300" height="200" />  
+    
+</tr>
+
+
  </ul >
 
 

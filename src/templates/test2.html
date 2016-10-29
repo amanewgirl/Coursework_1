@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+ <html lang="eng-US" style="height:100%;">
+
+
+
+{% extends "standard.html" %}
+{% block content %}
+
+
+
+
+<table>
+{% for jpg in jpgs %}           {# Just iterate over the names #}
+    <tr><td>{{ jpg }}</td></td>
+{% endfor %}
+</table>
+
+
+
+
+
+{% endblock %}}

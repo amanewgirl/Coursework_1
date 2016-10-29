@@ -4,23 +4,23 @@
 
 <!-- this is the main body of where all doodles are listed-->
 {% extends "standard.html" %}
+
 {% block content %}
+<div id= images>
+  <script src=""//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js""></script>
+    <script>
+ 
+    window.onload = function() {
+ 
+    alert( "welcome- Thank God this works" );
+ 
+			};
+ 
+    </script>
 
-<ul class= "display" >
-{% for jpgfile in files: %}
-
-<table style="width:100%">
 
 
- <tr>
-   {{jpgfile}}
-    <td> <img src="static/all_doodles/still_doodles/{{image}}" />
-    <td> <img src="static/all_doodles/{{image}}" width="120" height="90" />
-    <td> <img src="css/logos/{{image}}" width="120" height="90" />
-
- {% endfor %}
- </ul >
-
+</div>
 
 
 </div>

@@ -1,6 +1,9 @@
 # Coursework:Google doodle site structure
 
-from flask import Flask, redirect, url_for, abort,render_template
+import os
+from flask import Flask, redirect, url_for, abort,render_template, send_from_directory
+from glob import iglob
+from os.path import basename
 app = Flask(__name__)
 
 #this is the base Design across the web app
@@ -22,9 +25,21 @@ def alldoodles():
 
 @app.route("/test")
 def testing():
-   jpgfile = Image.open("static/all_doodles/still_doodles/10_October.jpg")
-   return render_template ('test.html', jpgfile = jpgfile)
+   return render_template ('test.html')
 
+
+@app.route("/test2")
+def tests():
+    jpgs = iglog('static/all_doodles/still_doodles/*.jpg')                  # An iterator of 'img/1.png', 'img/2.png', ...
+    jpgs = (basename(jpg) for jpg in jpgs)
+    return render_template ('test2.html', jpgs=jpgs)
+
+
+@app.route("/test3")
+def testingagain():
+   images = os.listdir('./static/all_doodles/still_doodles')
+   print(images)
+   return render_template ('test3.html', images=images)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
