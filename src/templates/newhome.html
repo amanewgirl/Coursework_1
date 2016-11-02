@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+ <html lang="eng-US" style="height:100%;">
+
+<head>
+<title>"Google Doodles"</title>
+<!-- favicon -->
+<link rel="icon" type="image/png" href="{{url_for('static',filename='css/logos/logo2.png')}}"/>
+
+<link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='css/design2.css') }}">
+<!-- jquery -->
+ <script src=""//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js""></script>
+
+</head>
+
+<body>
+<div id>
+
+<!-- background layer -->
+<div id="contents-layer">
+
+<!-- clickable cards to other functions of web app -->
+
+<a href="google.com">
+<div id="Title"> 
+<img id="title" src="{{url_for('static',filename='css/logos/logo4.PNG')}}">
+</div>
+</a>
+
+<a href="/latest-doodle/">
+<div id="Latest"> 
+<img id="latest" src="{{url_for('static',filename='css/logos/logo5.PNG')}}">
+</div>
+</a>
+
+
+<a href="/account/"> 
+<div id="Favourite">
+<img id="favourite" src="{{url_for('static',filename='css/logos/logo6.PNG')}}">
+</div>
+</a>
+
+
+<a href="/all-doodles/">
+<div id="Gallery">
+<img id="gallery" src="{{url_for('static',filename='css/logos/logo7.PNG')}}"
+
+<!-- feeds in all images in the directory to be displayed on page -->
+{% for image in images%}
+
+         <td><img class = "slideshow" src= " {{url_for('static', filename='all_doodles/still_doodles/'+image)}}" width="300" height="200">
+ 	
+
+
+  {% endfor %}
+
+<!-- Jquery script for auto slideshow, slightly modiefied from w3 schools -->
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("slideshow");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+
+</div>
+</a>
+
+
+
+
+
+<div id="Show">
+
+
+</div>
+
+
+
+
+
+
+</div>

@@ -10,17 +10,30 @@ app = Flask(__name__)
 def design():
   return render_template ('standard.html')
 
+#This gets all the still doodles to be used across the web app
+def jpgs():
+   images = os.listdir('./static/all_doodles/still_doodles')
+   print(images)
+   return render_template ('imageload.html', images=images)
+
 #this is the homepage of the app
 @app.route("/")
 def root():
-  return render_template ('home.html')
+  images = os.listdir('./static/all_doodles/still_doodles')
+  print(images)
+  return render_template ('newhome.html',images=images)
 
 
 #this lists all available doodles
 @app.route("/all-doodles/")
 def alldoodles():
-    return render_template ('all.html')
+   images = os.listdir('./static/all_doodles/still_doodles')
+   print(images)
+   return render_template ('imageload.html', images=images)
 
+@app.route("/latest-doodle/")
+def newdoodle():
+   return render_template ('home.html')
 
 
 @app.route("/test")
@@ -28,18 +41,6 @@ def testing():
    return render_template ('test.html')
 
 
-@app.route("/test2")
-def tests():
-    jpgs = iglog('static/all_doodles/still_doodles/*.jpg')                  # An iterator of 'img/1.png', 'img/2.png', ...
-    jpgs = (basename(jpg) for jpg in jpgs)
-    return render_template ('test2.html', jpgs=jpgs)
-
-
-@app.route("/test3")
-def testingagain():
-   images = os.listdir('./static/all_doodles/still_doodles')
-   print(images)
-   return render_template ('test3.html', images=images)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)

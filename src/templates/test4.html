@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+ <html lang="eng-US" style="height:100%;">
+
+
+<!-- trying to scroll-->
+{% extends "standard.html" %}
+
+{% block content %}
+ 
+ <br> </br>
+ <br> </br>
+
+ <script src=""//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js""></script>
+   
+ 
+ {% for image in images%}
+<script>	
+$(window).scroll(function() {
+    if($(window).scrollTop() == $(document).height() - $(window).height()) {
+           // ajax call get data from server and append to the div
+         <td><img src= " {{url_for('static', filename='all_doodles/still_doodles/'+image)}}" width="300" height="200">
+ 	
+
+    }
+});
+
+</script>
+
+  {% endfor %}
+
+{% endblock %}}

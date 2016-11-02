@@ -6,26 +6,45 @@
 {% extends "standard.html" %}
 
 {% block content %}
+
+<script src=""//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js""></script>
+ 
+
+
  
  <br> </br>
  <br> </br>
+ <br> </br>
+ <br> </br>
+ <br> </br>
+ <br> </br>
 
- <script src=""//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js""></script>
-   
-
+ 
  {% for image in images%}
-<script>	
-$(window).scroll(function() {
-    if($(window).scrollTop() == $(document).height() - $(window).height()) {
-           // ajax call get data from server and append to the div
-         <td><img src= " {{url_for('static', filename='all_doodles/still_doodles/'+image)}}" width="300" height="200">
+
+         <td><img class = "doodles" src= " {{url_for('static', filename='all_doodles/still_doodles/'+image)}}" width="300" height="200">
  	
 
-    }
-});
-
-</script>
 
   {% endfor %}
 
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("doodles");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
 {% endblock %}}
+
+
