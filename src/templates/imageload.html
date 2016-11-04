@@ -2,19 +2,80 @@
  <html lang="eng-US" style="height:100%;">
 
 {% extends "standard.html" %}
+
+{% block navtext %} Make sure you <a href="/account"> Sign in </a> for more doodles!{% endblock %} 
+
+
 {% block content %}
 <!-- this is loads all the jpg doodle files into the html-->
 
 
 <script src=""//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js""></script>
 
- <div id= "display" >
+{% block pictures %} 
 
- {% for image in images%}
+{% if name %}
 
-         <td><img class = "doodles" src= " {{url_for('static', filename='all_doodles/still_doodles/'+image)}}" width="300" height="200">
- 	
+<div id="greeting">Hello {{ name }} you've discovered the secret stash! </div>
+
+<!-- tab toggling code adapted from w3 schools-->
+
+<ul class="tab">
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'display')"id="defaultOpen">Still Images</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'displaygif')">Gifs</a></li>
+ </ul>
+
+
+
+<div id= "display" class="tabcontent">
+  {% for image in images %}
+	<td> <img class = "doodles" title=" {{url_for('static', filename='all_doodles/still_doodles/'+image)}}"  src= " {{url_for('static', filename='all_doodles/still_doodles/'+image)}}" width="300" height="200" >
   {% endfor %}
+</div>
+
+<div id= "displaygif" class="tabcontent" >
+  {% for gif in gifs %}
+	
+	<td> <img class = "moving" title=" {{url_for('static', filename='all_doodles/gifs/'+gif)}}"  src= " {{url_for('static', filename='all_doodles/gifs/'+gif)}}" width="300" height="200" >
+  {% endfor %}
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+</script>
+
+
+
+
+
+{% else %}
+
+
+
+<div id= "display" >
+  {% for image in images %}
+	<td> <img class = "doodles" title=" {{url_for('static', filename='all_doodles/still_doodles/'+image)}}"  src= " {{url_for('static', filename='all_doodles/still_doodles/'+image)}}" width="300" height="200" >
+  {% endfor %}
+{% endif %}
+
+
+
+{% endblock %} 
+
 
 </div>
 {% endblock %}}

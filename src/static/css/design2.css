@@ -9,6 +9,9 @@ div#contents-layer{
 
  }
 
+img:not(#title):hover {
+    outline: gray solid 5px;
+}
 
 img#title{
 	position:fixed;

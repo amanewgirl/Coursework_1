@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+ <html lang="eng-US" style="height:100%;">
+
+{% extends "standard.html" %}
+{% block content %}
+
+
+	<div id= user>
+	
+		Hi {{signedin.name}} welcome to Google's Doodles, your own little catalogue of the latest and best Google logo designs.
+	
+		Thank you for signing up, by doing so you now can <a href="/upload"> upload any Doodles we've missed here </a>
+	
+		and we will use your email: {{signedin.email}} to send you any updates
+
+		<a href="/all-doodles/{{signedin.name}}"> Browse the entire collection of doodles </a> 
+	
+	</div>
+
+</html>
+{% endblock %} 

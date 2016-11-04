@@ -4,30 +4,31 @@
 <head>
 <title>"Google Doodles"</title>
 <!-- tab icon -->
-<link rel="icon" type="image/png"
-href="{{url_for('static',filename='css/logos/logo2.png')}}" />
-<link rel= "stylesheet" type= "text/css" href= "{{
-url_for('static',filename='css/site.css') }}">
+<link rel="icon" type="image/png" href="{{url_for('static',filename='css/logos/logo2.png')}}" />
+<link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='css/site.css') }}">
+<!-- jquery -->
+ <script src=""//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js""></script>
+
 
 </head>
 
 <body>
-<div id>
+
 
 <div id="header">
 
 <div class="logospace">
-<img id=logo src="{{url_for('static',filename='css/logos/logo2.png')}}"   height="100" width="500">
+<a href="/"><img id=logo src="{{url_for('static',filename='css/logos/logo4.PNG')}}"   height="200" width="300"></a>
 
+<div id="message">
 
-<ul class="nav">
-<li><a href="search.html">Search |</a>
-<li><a href="/all-doodles/">All Doodles |</a></li>
-<li><a href="#">What's a Doodle</a></li>
-</ul>
+{% block navtext %} {% endblock %} 
+</div>
 </div>
 </div>
 
-<div id="contents-layer">
+
+
+<div id="contents-layer"></div>
 
 {% block content %} {% endblock %} 

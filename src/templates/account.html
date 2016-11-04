@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+ <html lang="eng-US" style="height:100%;">
+
+{% extends "standard.html" %}
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+{% block navtext %} 
+
+ Hello and welcome to Google doodles, sign up to upload your favourite doodles or to see some hidden features reserved especially for the likes of you!
+
+{% endblock %}   
+ 
+<form id="signup"action = "http://localhost:5000/signedin" method = "POST">
+Name <input type = "text" name = "name" />
+email address <input type = "text" name = "email" />
+<input type = "submit" value = "submit" />
+</form>
+      
+</html>
+{% endblock %} 
